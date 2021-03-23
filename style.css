@@ -5,3 +5,13 @@ body {
 #gradus {
   font-size: 70px;
 }
+
+.error {
+  background: red;
+  color: white;
+}
+
+.success {
+  background: green;
+  color: aliceblue;
+}

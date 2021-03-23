@@ -15,28 +15,29 @@
 
 <body>
 
-   <h2 class="d-flex justify-content-center align-items-center container mt-4">Weather App</h2>
+   <h2 class="d-flex justify-content-center align-items-center container mt-4 ">Weather App</h2>
 
    <!-- input section -->
-   <div class="row mt-5">
-      <div class="col-lg-4"></div>
-      <div class="col-lg-4">
-         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search Location..." id="inpitValue" />
-            <!-- <span class="input-group-btn">
+   <form id="form">
+      <div class="row mt-5">
+         <div class="col-lg-4"></div>
+         <div class="col-lg-4">
+            <div class="input-group">
+               <input type="text" class="form-control" placeholder="Search Location..." id="inputValue" />
+               <!-- <span class="input-group-btn">
                <button class="btn btn-default" type="button">Go!</button>
             </span> -->
-         </div><!-- /input-group -->
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4"></div>
-   </div><!-- /.row -->
+            </div><!-- /input-group -->
+         </div><!-- /.col-lg-4 -->
+         <div class="col-lg-4"></div>
+      </div><!-- /.row -->
+   </form>
 
-   <div
-      class="card  col-6 d-flex justify-content-center container mt-5 text-center shadow-lg p-3 mb-5 bg-white rounded ">
+   <div id="card"
+      class=" bg-light card  col-6 d-flex justify-content-center container mt-5 text-center shadow-lg p-3 mb-5 bg-white rounded ">
       <div class="card-body">
-         <h3 class="card-title">Loaction: <span id="location">Seoul, Korea</span></h3>
+         <h3 class="card-title">Loaction: <span id="location">Seoul</span> <span id="country">Korea</span></h3>
          <h1 id="gradus">25 <span>&#8451;</span>
-            <span id="weatherIcon">☁</span>
          </h1>
          <h4>Today is <span id="infoValue">Rainy or Windy</span></h4>
 
