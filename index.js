@@ -6,6 +6,8 @@ const weatherIcon = document.getElementById("weatherIcon");
 const infoValue = document.getElementById("infoValue");
 const form = document.getElementById("form");
 const country = document.getElementById("country");
+const visible = document.getElementById("invisible");
+visible.style.display = "none";
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -18,21 +20,22 @@ const baseApi = "https://api.openweathermap.org/data/2.5/weather?q=";
 function getDataFromApi() {
   const apiCity = inputValue.value;
   if (apiCity === "" || apiCity.trim() === "") {
-    // alert("search location");
+    alert("search location");
     showMessage("Location is not found! Try Again please..", "error");
   } else {
+    visible.style.display = "block";
     const apiKey = "&appid=d4c2bd34bf67072d2420f18a611545d9";
     const baseUrlApi = `${baseApi}${apiCity}${apiKey}`;
     showMessage("Location is found", "success");
     fetch(baseUrlApi)
       .then((response) => response.json())
       .then((data) => {
-        locationValue.innerText = data.name;
+        locationValue.innerText = `Location: ${data.name}`;
         country.innerText = data.sys.country;
         const gardusInfo = Math.floor(data.main.temp - 273.15);
         gradus.innerText = `${gardusInfo}°C`; //celcius
 
-        infoValue.innerHTML = data.weather[0].main;
+        infoValue.innerHTML = `Today is ${data.weather[0].main}`;
 
         console.log(data);
       })
