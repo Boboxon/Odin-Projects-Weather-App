@@ -37,7 +37,7 @@ function getDataFromApi() {
 
         infoValue.innerHTML = `Today is ${data.weather[0].main}`;
 
-        console.log(data);
+        // console.log(data);
       })
       .catch((error) => console.log(error));
     clear();
